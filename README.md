@@ -74,7 +74,7 @@
 ### 环境
 运行脚本前请安装pyfofa,pyyaml模块
 ~~~
-  python3 -m pip install pyfofa,pyyaml
+  python3 -m pip install pyfofa pyyaml
 ~~~
 
 # demo
