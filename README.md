@@ -70,6 +70,10 @@
 
 > threads
 <p>多线程大小</p>
-
+### 环境
+运行脚本前请安装pyfofa,pyyaml模块
+~~~
+  python3 -m pip install pyfofa,pyyaml
+~~~
 # demo
 <img src="https://raw.githubusercontent.com/Miagz/image/master/na25n-7yu0i.gif">
