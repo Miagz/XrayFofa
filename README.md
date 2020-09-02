@@ -55,13 +55,14 @@
  
 > fofaQuerysyntax
 <p>fofa查询语法 跟fofa使用差不多 更多搜索语法可在后面追加</p>
-~~~
-#fofa搜索语法,可直接在后面添加
-fofaQuerysyntax:
-        - status_code=200
-        - country="CN"
-        - title="后台管理系统"
-~~~
+
+  ~~~
+  #fofa搜索语法,可直接在后面添加
+  fofaQuerysyntax:
+          - status_code=200
+          - country="CN"
+          - title="后台管理系统"
+  ~~~
 
 ## 全局配置 ✔
 > scan_domain_name
