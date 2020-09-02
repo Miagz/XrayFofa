@@ -61,6 +61,7 @@
                   - country="CN"
                   - title="后台管理系统"
 ~~~
+
 ## 全局配置 ✔
 > scan_domain_name
 <p>开启后xray只会扫描fofa扫描出的域名,ip直接过滤 默认为关闭状态</p>
