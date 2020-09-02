@@ -36,7 +36,7 @@
           #多线程数量
           threads: 5
  ~~~
- ## xray配置✔
+## xray配置 ✔
 > input_file_type 
 <p>xray输出方式 为空的话则默认为html格式输出</p>
 
@@ -45,4 +45,25 @@
 
 >xray_file_path
 <p>xray所在的路径(包含xray文件名) 为空则默认xray在当前目录下</p>
+## fofa配置 ✔
+> Fofa_email
+<p>fofa登录邮箱</p>
+
+> Fofa_key
+<p>fofa api key 可在fofa个人资料中查看</p>
  
+> fofaQuerysyntax
+<p>fofa查询语法 跟fofa使用差不多 更多搜索语法可在后面追加</p>
+~~~
+          #fofa搜索语法,可直接在后面添加
+          fofaQuerysyntax:
+                  - status_code=200
+                  - country="CN"
+                  - title="后台管理系统"
+~~~
+## 全局配置 ✔
+> scan_domain_name
+<p>开启后xray只会扫描fofa扫描出的域名,ip直接过滤 默认为关闭状态</p>
+
+> threads
+<p>多线程大小</p>
