@@ -2,6 +2,14 @@
 🎉
 一款将xray和fofa结合运行的脚本,配置方法参考了piaolin大佬写的<a href="https://github.com/piaolin/fofa2Xray">fofa2Xray</a>
 增加了一些自己的想法(望指正)🌹🌹🌹
+
+
+### 环境
+运行脚本前请安装pyfofa,pyyaml模块
+~~~
+  python3 -m pip install pyfofa pyyaml
+~~~
+
 # scan_config.yaml
   ~~~yaml
 #xray配置
@@ -70,12 +78,6 @@
 
 > threads
 <p>多线程大小</p>
-
-### 环境
-运行脚本前请安装pyfofa,pyyaml模块
-~~~
-  python3 -m pip install pyfofa pyyaml
-~~~
 
 # demo
 <img src="https://raw.githubusercontent.com/Miagz/image/master/na25n-7yu0i.gif">
