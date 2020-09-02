@@ -72,4 +72,4 @@
 <p>多线程大小</p>
 
 # demo
-<img src="https://raw.githubusercontent.com/Miagz/image/master/eb9vk-x35qn.gif">
+<img src="https://raw.githubusercontent.com/Miagz/image/master/na25n-7yu0i.gif">
