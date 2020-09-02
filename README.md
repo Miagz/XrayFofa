@@ -36,9 +36,8 @@
           #多线程数量
           threads: 5
  ~~~
->>> input_file_type - xray输出方式 为空的话则默认为html格式输出
- <br>
- 
->>> file_path - xray结果的输出位置,为空则默认在当前目录下生成一个以 input_file_type 中所填写的输出方式作为名称的目录名称
- <br>
+> input_file_type - xray输出方式 为空的话则默认为html格式输出
+
+> file_path - xray结果的输出位置,为空则默认在当前目录下生成一个以 input_file_type 中所填写的输出方式作为名称的目录名称
+
  
