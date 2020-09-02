@@ -36,7 +36,7 @@
           #多线程数量
           threads: 5
  ~~~
- ## xray配置
+ ## xray配置✔
 > input_file_type 
 <p>xray输出方式 为空的话则默认为html格式输出</p>
 
