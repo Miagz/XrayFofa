@@ -36,5 +36,6 @@
           #多线程数量
           threads: 5
  ~~~
- xray_file_path xray输出方式,为空的话则默认为html格式
+ xray_file_path   xray输出方式 为空的话则默认为html格式输出
+ <br>
  file_path xray结果的输出位置
