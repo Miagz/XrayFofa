@@ -4,9 +4,6 @@
 增加了一些自己的想法(望指正)🌹🌹🌹
 
 
-### 更新
-
-
 # scan_config.yaml
   ~~~yaml
 #xray配置
