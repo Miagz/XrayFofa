@@ -1,8 +1,8 @@
 import threading
 import time
 import os,sys
-import pyfofa
-import yaml
+import Module.fofa
+import Module.yaml
 class scan(threading.Thread):
 	def __init__(self,thread):
 		threading.Thread.__init__(self)
@@ -10,7 +10,7 @@ class scan(threading.Thread):
 
 		#调用scan_config里面的配置
 
-		scan_config = yaml.full_load(open('scan_config.yaml'))
+		scan_config = Module.yaml.full_load(open('scan_config.yaml'))
 
 		self.domain_scan = scan_config['global']['scan_domain_name']
 		#[xray]
@@ -21,9 +21,11 @@ class scan(threading.Thread):
 		if self.xray_file_path == None:
 			self.xray_file_path = './xray_linux_amd64'
 		if self.input_file_type == None:
-			self.input_file_type = 'html'
+                        self.input_file_type = 'html'
 		if self.file_path == None:
 			self.file_path ='./'+self.input_file_type
+		if not os.path.exists(self.input_file_type):
+			os.makedirs(self.input_file_type)
 		#[fofa]
 		
 		self.fofa_email = scan_config['fofa']['Fofa_email']
@@ -49,7 +51,7 @@ class scan(threading.Thread):
 			value+=key+','
 		email = self.fofa_email
 		key = self.fofa_key
-		search = pyfofa.FofaAPI(email, key)
+		search = Module.fofa.FofaAPI(email, key)
 		try:
 			for host in search.get_data('%s'%(value),count, "host")['results']:
 				if self.domain_scan:
@@ -92,7 +94,7 @@ class scan(threading.Thread):
 
 if __name__=='__main__':
 	threads=[]
-	scan_config = yaml.full_load(open('scan_config.yaml'))
+	scan_config = Module.yaml.full_load(open('scan_config.yaml'))
 	thread_count =scan_config['global']['threads']
 	for i in range(1,thread_count+1):
 		threads.append(scan(i))
