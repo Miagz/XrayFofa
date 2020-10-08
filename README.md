@@ -3,6 +3,7 @@
 一款将xray和fofa结合运行的脚本,配置方法参考了piaolin大佬写的<a href="https://github.com/piaolin/fofa2Xray">fofa2Xray</a>
 增加了一些自己的想法(望指正)🌹🌹🌹
 
+# 更新历史
 
 # scan_config.yaml
   ~~~yaml
