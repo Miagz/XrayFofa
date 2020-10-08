@@ -4,11 +4,8 @@
 增加了一些自己的想法(望指正)🌹🌹🌹
 
 
-### 环境
-运行脚本前请安装pyfofa,pyyaml模块
-~~~
-  python3 -m pip install pyfofa pyyaml
-~~~
+### 更新
+
 
 # scan_config.yaml
   ~~~yaml
