@@ -63,6 +63,8 @@ global:
 <p>xray所在的路径(包含xray文件名) 为空则默认xray在当前目录下</p>
 
 ### fofa配置 ✔
+> Fofa_Cookie
+<p>fofa用户cookie,fofareptile启动后才会调用,留空后则爬虫爬取时每次只爬取一页</p>
 > Fofa_email
 <p>fofa登录邮箱</p>
 
@@ -82,6 +84,7 @@ global:
 ### 全局配置 ✔
 > fofareptile
 <p>使用python爬虫爬取fofa搜索结果,利用fofa关键字查询特性进行绕过注册会员只能看五页的限制,推荐fofa注册会员使用</p>
+<p>fofareptile启动后,需填写Fofa_Cookie选项</p>
 <p>## 缺陷 ## :由于使用随机组合关键字查询,会出现查询不到的结果,所以启动会比较慢(后续会努力完善)</p>
 > scan_domain_name
 <p>开启后xray只会扫描fofa扫描出的域名,ip直接过滤 默认为关闭状态</p>
