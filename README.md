@@ -100,4 +100,4 @@ global:
 <p>多线程大小</p>
 
 # demo
-<img src="https://raw.githubusercontent.com/Miagz/image/master/na25n-7yu0i.gif">
+<img src="https://github.com/Miagz/image/blob/master/pm.gif">
