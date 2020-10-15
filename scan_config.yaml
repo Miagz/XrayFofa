@@ -11,19 +11,25 @@ xray:
 
 #fofa配置
 fofa:
+        #fofa cookie
+        Fofa_Cookie: 
+
         #fofa登录邮箱
-        Fofa_email: 
+        Fofa_email:  
 
         #fofa key值
-        Fofa_key:  
+        Fofa_key:
 
         #fofa搜索语法,可直接在后面添加
         fofaQuerysyntax:
                 - status_code=200
-                - country="CN"
+
+
 
 #全局配置
 global:
+        #是否开启fofa爬虫模式,开启后需填写Fofa_Cookie和fofaQuery(开启后将不会使用fofaAPI,fofa普通会员以及fofa高级会员勿用)
+        fofareptile: no
         
         #是否只扫描域名,如果需要请修改为yes
         scan_domain_name: no
