@@ -5,7 +5,7 @@
 
 # 更新
 ## 1.2.0
-* 更新 fofareptile 功能,利用python爬虫爬取fofa搜索结果,推荐fofa注册会员使用
+* 更新 fofareptile 功能,使用python爬虫爬取fofa搜索结果,利用fofa关键字查询特性进行绕过注册会员只能看五页的限制,推荐fofa注册会员使用
 * 新增windows版xray的调用,在windows环境下可以调用windows版的xray了
 ## 1.1.0
 * 新增python第三方包
@@ -80,6 +80,9 @@ global:
   ~~~
 
 ### 全局配置 ✔
+> fofareptile
+<p>使用python爬虫爬取fofa搜索结果,利用fofa关键字查询特性进行绕过注册会员只能看五页的限制,推荐fofa注册会员使用</p>
+<p>缺陷:由于使用随机组合关键字查询,会出现查询不到的结果,所以启动会比较慢(后续会努力完善)</p>
 > scan_domain_name
 <p>开启后xray只会扫描fofa扫描出的域名,ip直接过滤 默认为关闭状态</p>
 
