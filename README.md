@@ -6,6 +6,7 @@
 XrayFofa git克隆下载:git clone https://github.com/Miagz/XrayFofa.git 
 <br>
 克隆下载需安装第三方库:  python -m pip install requests pyyaml lxml
+<br>
 
 # 更新
 ## 1.2.0
