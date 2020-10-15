@@ -4,7 +4,10 @@
 增加了一些自己的想法(望指正)🌹🌹🌹
 
 # 更新
-## 1.1
+## 1.2.0
+* 更新 fofareptile 功能,利用python爬虫爬取fofa搜索结果,推荐fofa注册会员使用
+* 新增windows版xray的调用,在windows环境下可以调用windows版的xray了
+## 1.1.0
 * 新增python第三方包
 * 修复了xray扫描结果无法输出问题
 
