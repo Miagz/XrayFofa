@@ -3,6 +3,8 @@
 一款将xray和fofa结合运行的脚本,配置方法参考了piaolin大佬写的<a href="https://github.com/piaolin/fofa2Xray">fofa2Xray</a>
 增加了一些自己的想法(望指正)🌹🌹🌹
 
+XrayFofa git克隆下载:
+
 # 更新
 ## 1.2.0
 * 更新 fofareptile 功能,使用python爬虫爬取fofa搜索结果,利用fofa关键字查询特性进行绕过注册会员只能看五页的限制,推荐fofa注册会员使用
