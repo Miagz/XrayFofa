@@ -1,7 +1,7 @@
 # XrayFofa
 🎉
 一款将xray和fofa结合运行的脚本,配置方法参考了piaolin大佬写的<a href="https://github.com/piaolin/fofa2Xray">fofa2Xray</a>
-增加了一些自己的想法(望指正)🌹🌹🌹
+增加了一些自己的想法(望指正),点个小星星支持一下🌹🌹🌹
 
 XrayFofa git克隆下载:git clone https://github.com/Miagz/XrayFofa.git 
 <br>
