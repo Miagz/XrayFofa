@@ -3,7 +3,7 @@ import threading
 import time
 import os,sys
 import Module.fofa
-import Module.yaml
+import yaml
 import Module.fofareptile
 import platform
 import random
@@ -14,7 +14,7 @@ class scan(threading.Thread):
 
 		#调用scan_config里面的配置
 
-		scan_config = Module.yaml.full_load(open('scan_config.yaml','rb'))
+		scan_config = yaml.full_load(open('scan_config.yaml','rb'))
 		self.domain_scan = scan_config['global']['scan_domain_name']
 		self.reptile = scan_config['global']['fofareptile']
 		if self.reptile:
@@ -132,7 +132,7 @@ ___   ___ .______          ___   ____    ____  _______   ______    _______    __
 	threads=[]
 	global keyslist
 	keyslist=[]
-	scan_config = Module.yaml.full_load(open('scan_config.yaml','rb'))
+	scan_config = yaml.full_load(open('scan_config.yaml','rb'))
 	thread_count =scan_config['global']['threads']
 	for i in range(1,thread_count+1):
 		threads.append(scan(i))
