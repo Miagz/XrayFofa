@@ -9,6 +9,9 @@ XrayFofa git克隆下载:git clone https://github.com/Miagz/XrayFofa.git
 <br>
 
 # 更新
+## 1.3.0
+修复了fofa API 调用问题(应该没啥问题了)
+对代码进行了简单的优化,fofa API 连不上时不会出现 报错一堆的情况了
 ## 1.2.0
 * 更新 fofareptile 功能,使用python爬虫爬取fofa搜索结果,利用fofa关键字查询特性进行绕过注册会员只能看五页的限制,推荐fofa注册会员使用
 * 新增windows版xray的调用
