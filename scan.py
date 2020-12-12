@@ -3,7 +3,7 @@ import threading
 import time
 import os,sys
 import Module.fofa
-import yaml
+import Module.yaml
 import Module.fofareptile
 import platform
 import random
@@ -14,7 +14,7 @@ class scan(threading.Thread):
 
 		#调用scan_config里面的配置
 
-		scan_config = yaml.full_load(open('scan_config.yaml','rb'))
+		scan_config = Module.yaml.full_load(open('scan_config.yaml','rb'))
 		self.domain_scan = scan_config['global']['scan_domain_name']
 		self.reptile = scan_config['global']['fofareptile']
 		if self.reptile:
@@ -69,16 +69,12 @@ class scan(threading.Thread):
 			email = self.fofa_email
 			key = self.fofa_key
 			search = Module.fofa.FofaAPI(email, key)
-			try:
-				for host in search.get_data('%s'%(value),count, "host")['results']:
-					if self.domain_scan:
-						if self.getdomain(host)!=None:
-							urllist.append(self.getdomain(host))
-					else:
-						urllist.append(self.geturl(host))
-			except:
-				print("KeyError:fofa连接失败,请检查email和key是否正确或者更新key!")
-				sys.exit()
+			for host in search.get_data('%s'%(value),count)['results']:
+				if self.domain_scan:
+					if self.getdomain(host)!=None:
+						urllist.append(self.getdomain(host))
+				else:
+					urllist.append(self.geturl(host))
 			return urllist
 			
 	def geturl(self,value): #优化url
@@ -102,7 +98,7 @@ class scan(threading.Thread):
 	def run(self):
 		#运行xray和fofa
 		if self.reptile:
-			while True:
+			while 1:
 				urllist = self.Fofa()
 				for url in urllist:
 					if self.domain_scan:
@@ -132,11 +128,32 @@ ___   ___ .______          ___   ____    ____  _______   ______    _______    __
 	threads=[]
 	global keyslist
 	keyslist=[]
-	scan_config = yaml.full_load(open('scan_config.yaml','rb'))
+	scan_config = Module.yaml.full_load(open('scan_config.yaml','rb'))
 	thread_count =scan_config['global']['threads']
+
+	info='\033[1;34m[INFO]\033[0m'
+	error='\033[1;31m[ERROR]\033[0m'
+	conn_info = '\033[1;32m[INFO]\033[0m'
+
+	print('{} Threads size is {}'.format(info,thread_count))
+
+	if scan_config['global']['scan_domain_name']:
+		print('{} Scan domain name is ON'.format(info))
+
+	if scan_config['global']['fofareptile']:
+		print('{} fofareptile is ON'.format(info))
+	else:
+		user_info = Module.fofa.FofaAPI(scan_config['fofa']['Fofa_email'],scan_config['fofa']['Fofa_key'])
+		if user_info.get_user_is_vip():
+			print(error,user_info.get_user_is_vip())
+			sys.exit()
+		else:
+			print('{} Fofa API successfully connected'.format(conn_info))
+			print('{} Start running XrayFofa'.format(info))
+
 	for i in range(1,thread_count+1):
 		threads.append(scan(i))
 	for thread in threads:
-		thread.start()
+		thread.start()	
 	for thread in threads:
 		thread.join()
