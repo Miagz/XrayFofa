@@ -28,7 +28,7 @@ fofa:
 
 #全局配置
 global:
-        #是否开启fofa爬虫模式,开启后需填写Fofa_Cookie和fofaQuery(开启后将不会使用fofaAPI,fofa普通会员以及fofa高级会员勿用)
+        #是否开启fofa爬虫模式,开启后需填写Fofa_Cookie和fofaQuery(开启后将不会使用fofaAPI,fofa高级会员勿用)
         fofareptile: no
         
         #是否只扫描域名,如果需要请修改为yes
