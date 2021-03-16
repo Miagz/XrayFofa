@@ -32,21 +32,23 @@ xray:
         #xray 结果输出方式默认是 html|xray输入出方式仅有html,json,text
         input_file_type: 
 
+        #自定义xray的plugins 默认为：phantasm,brute_force,sqldet,cmd_injection
+        xray_plugins:
+
 #fofa配置
 fofa:
         #fofa cookie
         Fofa_Cookie: 
 
         #fofa登录邮箱
-        Fofa_email:  
+        Fofa_email: 
 
         #fofa key值
-        Fofa_key:
+        Fofa_key: 
 
         #fofa搜索语法,可直接在后面添加
         fofaQuerysyntax:
                 - status_code=200
-
 
 
 #全局配置
@@ -59,6 +61,8 @@ global:
 
         #多线程数量
         threads: 5
+        
+
  ~~~
 ### xray配置 ✔
 > input_file_type 
@@ -69,6 +73,9 @@ global:
 
 > xray_file_path
 <p>xray所在的路径(包含xray文件名) 为空则默认xray在当前目录下</p>
+
+> xray_plugins
+<p>自定义xray的plugins 默认为：phantasm,brute_force,sqldet,cmd_injection</p>
 
 ### fofa配置 ✔
 > Fofa_Cookie
