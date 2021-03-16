@@ -25,6 +25,9 @@ class scan(threading.Thread):
 		self.file_path = scan_config['xray']['file_path']
 		self.xray_file_path = scan_config['xray']['xray_file_path']
 		self.input_file_type = scan_config['xray']['input_file_type']
+		self.xray_plugins = scan_config['xray']['xray_plugins']
+		if self.input_file_type == None:
+			self.xray_plugins = "phantasm,brute_force,sqldet,cmd_injection"
 		if self.xray_file_path == None:
 			if platform.system()=="Windows": # 判断操作系统
 				self.xray_file_path = 'xray_windows_amd64.exe'
@@ -52,7 +55,7 @@ class scan(threading.Thread):
 			file_path = self.file_path+"/"+str(int(time.time()))+'.txt'
 		else:
 			file_path = self.file_path+"/"+str(int(time.time()))+'.'+self.input_file_type
-		os.system('%s webscan  --plugins phantasm,brute_force,sqldet,cmd_injection --basic-crawler %s --%s-output %s'%(self.xray_file_path,url,self.input_file_type,file_path))
+		os.system('%s webscan  --plugins %s --basic-crawler %s --%s-output %s'%(self.xray_file_path,self.xray_plugins,url,self.input_file_type,file_path))
 	def Fofa(self,count=None): 
 		#fofa扫描
 		syntax=''
@@ -69,13 +72,17 @@ class scan(threading.Thread):
 			email = self.fofa_email
 			key = self.fofa_key
 			search = Module.fofa.FofaAPI(email, key)
-			for host in search.get_data('%s'%(value),count)['results']:
-				if self.domain_scan:
-					if self.getdomain(host)!=None:
-						urllist.append(self.getdomain(host))
-				else:
-					urllist.append(self.geturl(host))
-			return urllist
+			try:
+				for host in search.get_data('%s'%(value),count)['results']:
+					if self.domain_scan:
+						if self.getdomain(host)!=None:
+							urllist.append(self.getdomain(host))
+					else:
+						urllist.append(self.geturl(host))
+				return urllist
+			except:
+				print("Response error! Please try crawler mode!")
+				sys.exit()
 			
 	def geturl(self,value): #优化url
 		value =value.strip()
@@ -157,3 +164,4 @@ ___   ___ .______          ___   ____    ____  _______   ______    _______    __
 		thread.start()	
 	for thread in threads:
 		thread.join()
+
