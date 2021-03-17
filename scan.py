@@ -72,6 +72,9 @@ class scan(threading.Thread):
 			email = self.fofa_email
 			key = self.fofa_key
 			search = Module.fofa.FofaAPI(email, key)
+			if search.get_data('%s'%(value),count)['results']==[]:
+				print("The fofa scan result is empty, end ")
+				sys.exit()
 			try:
 				for host in search.get_data('%s'%(value),count)['results']:
 					if self.domain_scan:
