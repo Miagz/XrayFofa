@@ -5,13 +5,13 @@ import os,sys
 import Module.fofa
 import Module.yaml
 import Module.fofareptile
+import queue
 import platform
 import random
 class scan(threading.Thread):
-	def __init__(self,thread):
+	def __init__(self,q=None):
 		threading.Thread.__init__(self)
-		self.thread = thread
-
+		self.q = q
 		#调用scan_config里面的配置
 
 		scan_config = Module.yaml.full_load(open('scan_config.yaml','rb'))
@@ -71,6 +71,7 @@ class scan(threading.Thread):
 				value+=key+','
 			email = self.fofa_email
 			key = self.fofa_key
+			
 			search = Module.fofa.FofaAPI(email, key)
 			if search.get_data('%s'%(value),count)['results']==[]:
 				print("The fofa scan result is empty, end ")
@@ -106,7 +107,6 @@ class scan(threading.Thread):
 			except:
 				return url
 	def run(self):
-		#运行xray和fofa
 		if self.reptile:
 			while 1:
 				urllist = self.Fofa()
@@ -117,12 +117,10 @@ class scan(threading.Thread):
 					else:url = self.geturl(url)
 					self.xray(url)
 		else:
-			count=1
-			while count<=1000:
-				count+=self.thread
-				urllist = self.Fofa(count)
-				for url in urllist:
-					self.xray(url)
+			while not self.q.empty():
+				url_list = q.get()
+				for url in url_list:self.xray(url)
+
 
 if __name__=='__main__':
 	print("""
@@ -136,8 +134,7 @@ ___   ___ .______          ___   ____    ____  _______   ______    _______    __
 \033[0m
 """)
 	threads=[]
-	global keyslist
-	keyslist=[]
+	count=1
 	scan_config = Module.yaml.full_load(open('scan_config.yaml','rb'))
 	thread_count =scan_config['global']['threads']
 
@@ -159,12 +156,15 @@ ___   ___ .______          ___   ____    ____  _______   ______    _______    __
 			sys.exit()
 		else:
 			print('{} Fofa API successfully connected'.format(conn_info))
-			print('{} Start running XrayFofa'.format(info))
+			print('{} Start running XrayFofa'.format(info))`
 
+	q = queue.Queue()
 	for i in range(1,thread_count+1):
-		threads.append(scan(i))
+		q.put(scan().Fofa(count))
+		count+=1
+	for i in range(1,thread_count+1):
+		threads.append(scan(q))
 	for thread in threads:
-		thread.start()	
+		thread.start()
 	for thread in threads:
 		thread.join()
-
