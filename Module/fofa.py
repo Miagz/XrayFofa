@@ -14,6 +14,7 @@ class FofaAPI(object):
         get_data_info='https://fofa.so/api/v1/search/all'
         if self.get_user_is_vip():
             return self.get_user_is_vip()
+        query=query.replace(",","&&")[:-2]
         qbase64 = base64.b64encode(query.encode()).decode()
         data = {'qbase64':qbase64,'email':self.email,'key':self.key,'page':page,'fields':fields}
         info = requests.get(get_data_info,params=data,timeout=5)
