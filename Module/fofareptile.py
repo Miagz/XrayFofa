@@ -6,7 +6,7 @@ from urllib.parse import quote
 from lxml import etree
 def fofascan(cookie,query):
     while 1:
-        query = query.replace(',',"&&")
+        query = query.replace(',',"&&")[:-2]
         url = 'https://fofa.so'
         strs=string.ascii_lowercase
         domainlist=[]
