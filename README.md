@@ -9,6 +9,10 @@ XrayFofa git克隆下载:git clone https://github.com/Miagz/XrayFofa.git
 <br>
 
 # 更新
+## 1.4.0
+* 修复了普通会员启动时出bug（fofa普通会员只能API查询数据100条的硬性规定我是真的无能为力，只能提醒一下一下啦）
+* 增加了xray plugins的自定义模式，可以随意自定义自己需要的plugins
+
 ## 1.3.0
 * 修复了fofa API 调用问题(应该没啥问题了)
 * 对代码进行了简单的优化,fofa API 连不上时不会出现 报错一堆的情况了
