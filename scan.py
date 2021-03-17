@@ -159,10 +159,10 @@ ___   ___ .______          ___   ____    ____  _______   ______    _______    __
 			print('{} Start running XrayFofa'.format(info))`
 
 	q = queue.Queue()
-	for i in range(1,thread_count+1):
+	for i in range(thread_count):
 		q.put(scan().Fofa(count))
 		count+=1
-	for i in range(1,thread_count+1):
+	for i in range(thread_count):
 		threads.append(scan(q))
 	for thread in threads:
 		thread.start()
