@@ -26,8 +26,8 @@ class scan(threading.Thread):
 		self.xray_file_path = scan_config['xray']['xray_file_path']
 		self.input_file_type = scan_config['xray']['input_file_type']
 		self.xray_plugins = scan_config['xray']['xray_plugins']
-		if self.input_file_type == None:
-			self.xray_plugins = "phantasm,brute_force,sqldet,cmd_injection"
+		if self.xray_plugins == None:
+			self.xray_plugins = "xss,dirscan,xxe,upload,jsonp,brute-force,cmd-injection,crlf-injection,phantasm,sqldet"
 		if self.xray_file_path == None:
 			if platform.system()=="Windows": # 判断操作系统
 				self.xray_file_path = 'xray_windows_amd64.exe'
