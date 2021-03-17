@@ -9,7 +9,7 @@ xray:
         #xray 结果输出方式默认是 html|xray输入出方式仅有html,json,text
         input_file_type: 
 
-        #自定义xray的plugins 默认为：phantasm,brute_force,sqldet,cmd_injection
+        #自定义xray的plugins 默认为：xss,dirscan,xxe,upload,jsonp,brute-force,cmd-injection,crlf-injection,phantasm,sqldet
         xray_plugins: 
 
 #fofa配置
