@@ -3,7 +3,7 @@ xray:
         #扫描结果存储路径
         file_path: 
         
-        #xray文件位置,不填则为XrayFofa根目录
+        #xray文件位置,不填则为XrayFofa根目录,例如:/路径/xray_***_amd64
         xray_file_path:
         
         #xray 结果输出方式默认是 html|xray输入出方式仅有html,json,text
