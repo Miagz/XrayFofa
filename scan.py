@@ -156,7 +156,7 @@ ___   ___ .______          ___   ____    ____  _______   ______    _______    __
 			sys.exit()
 		else:
 			print('{} Fofa API successfully connected'.format(conn_info))
-			print('{} Start running XrayFofa'.format(info))`
+			print('{} Start running XrayFofa'.format(info))
 
 	q = queue.Queue()
 	for i in range(thread_count):
