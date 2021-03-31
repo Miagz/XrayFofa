@@ -30,7 +30,7 @@ xray:
         #扫描结果存储路径
         file_path: 
         
-        #xray文件位置,不填则为默认路径
+        #xray文件位置,不填则为XrayFofa根目录
         xray_file_path:
         
         #xray 结果输出方式默认是 html|xray输入出方式仅有html,json,text
@@ -76,7 +76,7 @@ global:
 <p>xray结果的输出位置,为空则默认在当前目录下生成一个以 input_file_type 中所填写的输出方式作为名称</p>
 
 > xray_file_path
-<p>xray所在的路径(包含xray文件名) 为空则默认xray在当前目录下</p>
+<p>xray所在的路径(包含xray文件名) 不填则为XrayFofa根目录</p>
 
 > xray_plugins
 <p>自定义xray的plugins 默认为：phantasm,brute_force,sqldet,cmd_injection</p>
