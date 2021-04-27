@@ -8,6 +8,9 @@ XrayFofa git克隆下载:git clone https://github.com/Miagz/XrayFofa.git
 克隆下载需安装第三方库:  python3 -m pip install requests pyyaml lxml
 <br>
 
+# 注意
+fofa爬虫功能用不了了! fofa开了反爬虫!
+
 # 更新
 ## 1.4.0
 * 修复了普通会员启动时出bug（fofa普通会员只能API查询数据100条的硬性规定我是真的无能为力，只能提醒一下一下啦）
