@@ -10,6 +10,7 @@ XrayFofa git克隆下载:git clone https://github.com/Miagz/XrayFofa.git
 
 # 注意
 fofa爬虫功能用不了了! fofa开了反爬虫!
+现已经停止更新（本人太懒了....😭😭😭)hxdm抱歉了
 
 # 更新
 ## 1.4.0
